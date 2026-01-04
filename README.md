@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # Creative Showcase
 
 Creative Showcase is a full-stack web application built with the MERN stack (MongoDB Atlas, Express, React, Node.js). It features a masonry image grid, user authentication, a private dashboard for image management, and public user profiles.
 
 ## Features
+=======
+<h1>Creative Showcase</h1>
+
+Creative Showcase is a full-stack web application built with the MERN stack (MongoDB Atlas, Express, React, Node.js). It features a masonry image grid, user authentication, a private dashboard for image management, and public user profiles.
+
+<h2>Features</h2>
+>>>>>>> c62fad2a3ae18d50ac0bed8dc275bf35735c1bb2
 
 - **Masonry Layout:** visually appealing image grid.
 - **User Authentication:** Secure signup and login authenticaton using JWT.
@@ -10,14 +18,22 @@ Creative Showcase is a full-stack web application built with the MERN stack (Mon
 - **Public Profiles:** View other users' curated collections.
 - **Responsive Design:** Optimized for various screen sizes.
 
+<<<<<<< HEAD
 ## Prerequisites
+=======
+<h2>Prerequisites</h2>
+>>>>>>> c62fad2a3ae18d50ac0bed8dc275bf35735c1bb2
 
 Before you begin, ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v14 or higher)
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account (or a local MongoDB instance)
 
+<<<<<<< HEAD
 ## Installation
+=======
+<h2>Installation</h2>
+>>>>>>> c62fad2a3ae18d50ac0bed8dc275bf35735c1bb2
 
 1.  **Clone the repository:**
 
@@ -40,7 +56,11 @@ Before you begin, ensure you have the following installed:
     npm install
     ```
 
+<<<<<<< HEAD
 ## Configuration
+=======
+<h2>Configuration</h2>
+>>>>>>> c62fad2a3ae18d50ac0bed8dc275bf35735c1bb2
 
 1.  **Backend Environment Variables:**
 
@@ -54,7 +74,11 @@ Before you begin, ensure you have the following installed:
 
     *Note: Replace `your_mongodb_connection_string` and `your_jwt_secret_key` with your actual credentials.*
 
+<<<<<<< HEAD
 ## Running the Application
+=======
+<h2>Running the Application</h2>
+>>>>>>> c62fad2a3ae18d50ac0bed8dc275bf35735c1bb2
 
 ### Backend
 
@@ -78,7 +102,14 @@ npm run dev
 
 The frontend will usually generally run on `http://localhost:5173`.
 
+<<<<<<< HEAD
 ## User Guide
+=======
+
+
+
+<h2>User Guide</h2>
+>>>>>>> c62fad2a3ae18d50ac0bed8dc275bf35735c1bb2
 
 ### 1. Getting Started
 - **Access the App:** Open your browser and go to `http://localhost:5173`.
