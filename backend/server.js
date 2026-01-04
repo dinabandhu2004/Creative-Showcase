@@ -13,8 +13,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Serve static files from the uploads directory
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Serve static files from the uploads directory - REMOVED for Cloudinary
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Placeholder routes
 app.get('/', (req, res) => {

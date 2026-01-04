@@ -1,6 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const getSecureImageUrl = (url) => {
+    if (!url) return 'https://via.placeholder.com/400x300?text=No+Image';
+    if (url.startsWith('http')) {
+        return url.replace(/^http:\/\//i, 'https://');
+    }
+    // Fallback for old relative paths - assume they are broken or handle differently if needed.
+    // Ideally, we shouldn't have relative paths anymore.
+    return url;
+};
+
 const ImageCard = ({ image, onClick }) => {
     return (
         <motion.div
@@ -20,10 +30,11 @@ const ImageCard = ({ image, onClick }) => {
             whileHover={{ y: -5 }}
         >
             <img
-                src={`http://localhost:5000/${image.imageUrl}`}
+                src={getSecureImageUrl(image.imageUrl)}
                 alt={image.title || 'Artwork'}
                 style={{ width: '100%', height: 'auto', display: 'block' }}
                 loading="lazy"
+                onError={(e) => { e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found'; }}
             />
             <div style={{
                 position: 'absolute',

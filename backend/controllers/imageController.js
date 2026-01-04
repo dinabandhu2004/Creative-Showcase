@@ -9,15 +9,12 @@ const uploadImage = async (req, res) => {
     }
 
     const { title } = req.body;
-    // req.file.path contains the local path to the file
-    // We want to store a relative URL or path that the frontend can use
-    // Since we are serving 'backend/uploads' as static at '/uploads', we can construct the URL.
-    // Assuming backend is at localhost:5000, the image is at localhost:5000/uploads/filename
-
-    // However, saving just the filename or relative path is often better.
-    // Let's save the relative path 'uploads/filename'.
-
-    const imageUrl = `uploads/${req.file.filename}`;
+    // Cloudinary returns the absolute URL in req.file.path
+    // However, if we save the full URL, the frontend logic that prepends localhost:5000 will double it up.
+    // The frontend currently expects a relative path (e.g. 'uploads/filename').
+    // BUT we are switching to Cloudinary, so we MUST save the full URL.
+    // We will update the frontend to handle this.
+    const imageUrl = req.file.path;
 
     const image = await Image.create({
         user: req.user.id,

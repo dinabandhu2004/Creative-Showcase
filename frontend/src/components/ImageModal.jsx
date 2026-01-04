@@ -2,6 +2,14 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
 
+const getSecureImageUrl = (url) => {
+    if (!url) return 'https://via.placeholder.com/800x600?text=No+Image';
+    if (url.startsWith('http')) {
+        return url.replace(/^http:\/\//i, 'https://');
+    }
+    return url;
+};
+
 const ImageModal = ({ image, onClose }) => {
     // Prevent body scrolling when modal is open
     useEffect(() => {
@@ -70,7 +78,7 @@ const ImageModal = ({ image, onClose }) => {
                         </button>
 
                         <img
-                            src={`http://localhost:5000/${image.imageUrl}`}
+                            src={getSecureImageUrl(image.imageUrl)}
                             alt={image.title || 'Artwork'}
                             style={{
                                 maxWidth: '100%',
@@ -78,6 +86,7 @@ const ImageModal = ({ image, onClose }) => {
                                 borderRadius: '8px',
                                 boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5)'
                             }}
+                            onError={(e) => { e.target.src = 'https://via.placeholder.com/800x600?text=Image+Not+Found'; }}
                         />
 
                         <div style={{
